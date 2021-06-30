@@ -4,8 +4,8 @@ const canvas = document.querySelector('#telaJogo')
 let xBolinha = 300
 let yBolinha = 200
 let diamentro = 15
-let velXBol = 6
-let velYBol = 6
+let velXBol = 2
+let velYBol = 2
 
 function circle(x, y, diametro, cor) {
   const bola = canvas.getContext('2d')
@@ -30,4 +30,7 @@ setInterval(() => {
   circle(xBolinha, yBolinha, diamentro, 'white')
   xBolinha += velXBol
   yBolinha += velYBol
-}, 10)
+
+  if (xBolinha > 585 || xBolinha < 15) velXBol *= -1
+  if (yBolinha > 385 || yBolinha < 15) velYBol *= -1
+}, 1)
