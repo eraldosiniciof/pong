@@ -17,6 +17,10 @@ function circle(x, y, diametro, cor) {
   // bola.stroke()
 }
 
+function showBall() {
+  circle(xBolinha, yBolinha, diamentro, 'white')
+}
+
 function removeCircle() {
   circle(xBolinha, yBolinha, diamentro + 1500, 'black')
 }
@@ -25,17 +29,19 @@ function background(color) {
   canvas.style.backgroundColor = color
 }
 
-setInterval(() => {
-  removeCircle()
-  circle(xBolinha, yBolinha, diamentro, 'white')
+function setVel() {
   xBolinha += velXBol
   yBolinha += velYBol
+}
 
-<<<<<<< HEAD
+function crashed() {
   if (xBolinha > 585 || xBolinha < 15) velXBol *= -1
   if (yBolinha > 385 || yBolinha < 15) velYBol *= -1
-=======
-  if (xBolinha > 590 || xBolinha < 10) velXBol *= -1
-  if (yBolinha > 390 || yBolinha < 10) velYBol *= -1
->>>>>>> 34b4e44e2277edc95820547e3c32351c9b86097a
+}
+
+setInterval(() => {
+  removeCircle()
+  showBall()
+  setVel()
+  crashed()
 }, 1)
