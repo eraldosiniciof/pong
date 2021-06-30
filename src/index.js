@@ -31,6 +31,11 @@ setInterval(() => {
   xBolinha += velXBol
   yBolinha += velYBol
 
+<<<<<<< HEAD
   if (xBolinha > 585 || xBolinha < 15) velXBol *= -1
   if (yBolinha > 385 || yBolinha < 15) velYBol *= -1
+=======
+  if (xBolinha > 590 || xBolinha < 10) velXBol *= -1
+  if (yBolinha > 390 || yBolinha < 10) velYBol *= -1
+>>>>>>> 34b4e44e2277edc95820547e3c32351c9b86097a
 }, 1)
